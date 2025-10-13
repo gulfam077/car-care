@@ -7,7 +7,8 @@ const app = express();
 
 
 // Step 3: Choose a port (a number for your server to listen on)
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
+
 
 app.use(express.static('public'));
 
