@@ -49,3 +49,34 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.product-item button {
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.product-item button:hover {
+  background: #c9302c;
+}
+.edit-btn {
+  background: #0275d8;
+  color: white;
+  margin-right: 6px;
+}
+.edit-btn:hover {
+  background: #025aa5;
+}

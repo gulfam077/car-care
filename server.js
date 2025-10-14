@@ -81,7 +81,38 @@ app.get('/products', async (req, res) => {
   }
 });
 
+// --- DELETE PRODUCT ROUTE ---
+app.delete('/delete-product/:id', async (req, res) => {
+  try {
+    const productId = req.params.id;
+    await Product.findByIdAndDelete(productId);
+    res.json({ message: '🗑 Product deleted successfully!' });
+  } catch (error) {
+    console.error('❌ Error deleting product:', error);
+    res.status(500).json({ error: 'Failed to delete product' });
+  }
+});
+
+// --- UPDATE PRODUCT ROUTE ---
+app.put('/update-product/:id', async (req, res) => {
+  try {
+    const { name, price } = req.body;
+    const { id } = req.params;
+
+    if (!name || !price) {
+      return res.status(400).json({ error: 'Name and price required' });
+    }
+
+    await Product.findByIdAndUpdate(id, { name, price });
+    res.json({ message: '✏️ Product updated successfully!' });
+  } catch (error) {
+    console.error('❌ Error updating product:', error);
+    res.status(500).json({ error: 'Failed to update product' });
+  }
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
+
