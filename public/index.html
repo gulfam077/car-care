@@ -9,9 +9,19 @@
 <body>
   <div class="container">
     <h1>Rai's Car Care Services</h1>
+
+    <h2>Add New Product</h2>
+<form id="productForm">
+  <input type="text" id="name" placeholder="Product name" required />
+  <input type="number" id="price" placeholder="Price (PKR)" required />
+  <button type="submit">Add Product</button>
+</form>
+<hr>
+
     <button id="loadProductsBtn">Load Products</button>
     <div id="productList"></div>
   </div>
+
 
   <script src="app.js"></script>
 </body>
